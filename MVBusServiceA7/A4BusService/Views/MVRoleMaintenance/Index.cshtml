@@ -1,0 +1,30 @@
+﻿@using Microsoft.AspNet.Identity.EntityFramework;
+@model IEnumerable<IdentityRole>
+@{
+    ViewBag.Title = "Existing Roles";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("AddRole", "MVRoleMaintenance"))
+{
+    <p>Add New Role: @Html.TextBox("roleName") <input type="submit" value="Add Role " /></p>
+}
+
+<table class="table">
+    <tr><th>Role Name</th><th></th></tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>
+                @if (item.Name != "administrators")
+                {
+                    @Html.ActionLink("Delete Role", "DeleteRole", new { roleName = item.Name }) <text>|</text>
+                }
+                @Html.ActionLink("List Members", "MemberList", new { roleName = item.Name })
+            </td>
+        </tr>
+    }
+</table>
+

@@ -1,0 +1,31 @@
+﻿@using A4BusService.Models;
+@model IEnumerable<ApplicationUser>
+@{
+    ViewBag.Title = "Members in role: " + ViewBag.roleName;
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("AddToRole", "MVRoleMaintenance"))
+{
+    string roleName = ViewBag.roleName;
+    @Html.Hidden("roleName")
+    @Html.DropDownList("userId") <input type="submit" value="Add to Role" />
+}
+
+
+<table>
+    <tr><th>User Name</th><th></th></tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.UserName</td>
+            <td>
+                @if (!(ViewBag.roleName == "administrators" && ViewBag.userName == item.UserName))
+                {
+                    @Html.ActionLink("Remove User", "RemoveFromRole", new { userId = item.Id, roleName = ViewBag.roleName })
+                }
+            </td>
+        </tr>
+    }
+</table>

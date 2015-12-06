@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Matt's Bus Service</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img src="~/Content/busImage.jpg" height="75" width="75" style="padding:10px" />
+            </div>
+            <div class="navbar-collapse collapse">
+                @Html.ActionLink("Matt's Bus Service", "Index", "Home", null, new { @class = "navbar-brand" })
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Bus Routes", "Index", "BusRoute")</li>
+                    <li>@Html.ActionLink("Bus Stops", "Index", "BusStop")</li>
+                    <li>@Html.ActionLink("Drivers", "Index", "Driver")</li>
+                    @if (User.IsInRole("administrators"))
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Security<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("User Maintenence", "Index", "MVUserMaintenance")</li>
+                                <li>@Html.ActionLink("Role Maintenence", "Index", "MVRoleMaintenance")</li>
+                            </ul>
+                        </li>
+                    }
+                    
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <br />
+        <span class="text-danger"><strong>@TempData["message"]</strong></span>
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="col-md-6">&copy; <a href="mailto:mvanboxtel0873@conestogac.on.ca">Matthew Van Boxtel</a>, Section 2</div>
+            <div class="col-md-6" style="text-align:right">@Html.ActionLink("About", "About", "Home") &nbsp; &nbsp; &nbsp; &nbsp; @Html.ActionLink("Contact", "Contact", "Home")</div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

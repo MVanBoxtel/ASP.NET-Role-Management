@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40418.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A4BusService", "A4BusService\A4BusService.csproj", "{AD2CB1A4-C693-41CD-A6E2-BE47E6643DC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A4BusService.Tests", "A4BusService.Tests\A4BusService.Tests.csproj", "{FCF1798A-84A9-49FA-9AD3-E6F66A0700B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD2CB1A4-C693-41CD-A6E2-BE47E6643DC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD2CB1A4-C693-41CD-A6E2-BE47E6643DC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD2CB1A4-C693-41CD-A6E2-BE47E6643DC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD2CB1A4-C693-41CD-A6E2-BE47E6643DC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCF1798A-84A9-49FA-9AD3-E6F66A0700B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCF1798A-84A9-49FA-9AD3-E6F66A0700B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCF1798A-84A9-49FA-9AD3-E6F66A0700B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCF1798A-84A9-49FA-9AD3-E6F66A0700B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
